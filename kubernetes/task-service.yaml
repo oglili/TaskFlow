@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: task-service
-          image: YOUR_DOCKERHUB_USERNAME/taskflow-task-service:1.0
+          image: oghomwwen/taskflow-task-service:1.0
           ports:
             - containerPort: 3002
           readinessProbe:
