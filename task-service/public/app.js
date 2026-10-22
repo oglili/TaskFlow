@@ -6,7 +6,7 @@ const refreshButton = document.getElementById('refresh-button');
 
 async function loadUsers() {
     try {
-        const response = await fetch('http://localhost:3001/api/users');
+        const response = await fetch('/api/users');
 
         if (!response.ok) {
             throw new Error('Could not load users');
