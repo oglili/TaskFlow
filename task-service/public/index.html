@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Task Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>TaskFlow</h1>
+            <p>Simple task management for your team</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="panel">
+            <h2>Create a task</h2>
+
+            <form id="task-form">
+                <label for="title">Task title</label>
+                <input id="title" name="title" type="text"
+                       placeholder="Enter a task title" required>
+
+                <label for="description">Description</label>
+                <textarea id="description" name="description"
+                          placeholder="Describe the task"></textarea>
+
+                <label for="priority">Priority</label>
+                <select id="priority" name="priority">
+                    <option value="low">Low</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="high">High</option>
+                </select>
+
+                <label for="assignedTo">Assign to</label>
+                <select id="assignedTo" name="assignedTo">
+                    <option value="">Unassigned</option>
+                </select>
+
+                <button type="submit">Create task</button>
+                <p id="form-message" role="status"></p>
+            </form>
+        </section>
+
+        <section class="tasks-section">
+            <h2>Tasks</h2>
+            <button id="refresh-button" type="button">Refresh tasks</button>
+            <div id="tasks-list" class="tasks-list"></div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
