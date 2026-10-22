@@ -17,6 +17,18 @@ spec:
           image: YOUR_DOCKERHUB_USERNAME/taskflow-task-service:1.0
           ports:
             - containerPort: 3002
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 3002
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 3002
+            initialDelaySeconds: 15
+            periodSeconds: 20  
           env:
             - name: PORT
               value: "3002"
